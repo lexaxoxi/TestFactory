@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class Employee {
     private String FIO;
-    private String Profession;
-    private String Department;
-    private String Note;
+    private String profession;
+    private String department;
+    private String note;
 }

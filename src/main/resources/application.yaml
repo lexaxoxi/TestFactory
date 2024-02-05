@@ -1,8 +1,13 @@
 spring:
   datasource:
     url: jdbc:h2:mem:factoryDB
-    username: sa
-    password: password
+    username: posrtgres
+    password: admin
     driverClassName: org.h2.Driver
   jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    generate-ddl: true
+    defer-datasource-initialization: true

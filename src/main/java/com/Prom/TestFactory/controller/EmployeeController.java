@@ -17,7 +17,6 @@ public class EmployeeController {
 
         @GetMapping
         public List<Employee> findAllEmployee () {
-//TODO
             return employeeService.findAllEmployee();
         }
         @PostMapping("save_employee")
@@ -34,7 +33,7 @@ public class EmployeeController {
             return employeeService.updateEmployee(employee);
         }
 
-        @DeleteMapping("delete_employee/{FIO}")
+        @DeleteMapping("remove_employee/{FIO}")
     public void removeEmployee(@PathVariable String FIO) {
             employeeService.removeEmployee(FIO);
         }

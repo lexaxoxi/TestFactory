@@ -4,14 +4,17 @@ import com.Prom.TestFactory.model.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public interface EmployeeService {
     public List<Employee> findAllEmployee();
+
     Employee saveEmployee(Employee employee);
-    Employee findByFIO(String FIO);
 
-    Employee updateEmployee(Employee employee);
+    Optional<Employee> findById(Long id);
 
-    void removeEmployee(String FIO);
+    Employee updateEmployee(Employee updEmployee, Long id);
+
+    void removeEmployee(Long id);
 }

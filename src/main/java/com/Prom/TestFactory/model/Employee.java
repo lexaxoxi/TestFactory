@@ -1,8 +1,6 @@
 package com.Prom.TestFactory.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 
@@ -11,10 +9,12 @@ import lombok.Data;
 public class Employee {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String FIO;
-    private String profession;
-    private String department;
+    @ManyToOne
+    private Profession profession;
+    @ManyToOne
+    private Department department;
     private String note;
 }

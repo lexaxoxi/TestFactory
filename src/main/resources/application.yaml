@@ -6,8 +6,12 @@ spring:
     driverClassName: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     generate-ddl: true
     defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:/data.sql

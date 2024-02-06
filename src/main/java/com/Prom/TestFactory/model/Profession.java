@@ -15,4 +15,5 @@ public class Profession {
     private Long id;
     private String title;
     private String note;
+
 }

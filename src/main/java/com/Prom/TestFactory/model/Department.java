@@ -15,3 +15,4 @@ public class Department {
     @ManyToOne
     private Department parent;
 }
+

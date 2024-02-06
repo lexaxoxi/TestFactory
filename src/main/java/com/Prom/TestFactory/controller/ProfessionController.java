@@ -44,7 +44,7 @@ public class ProfessionController {
         });
 
     }
-    @DeleteMapping("remove_department/{id}")
+    @DeleteMapping("remove_profession/{id}")
     public void removeProfession(@PathVariable Long id) {
         profissionService.removeProfession(id);
     }

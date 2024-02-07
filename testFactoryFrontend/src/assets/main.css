@@ -1,0 +1,16 @@
+.body {
+    width: 100%;
+    height: 100%;
+}
+
+.general {
+    padding-bottom: 10px;
+}
+
+.h4 {
+    padding-bottom: 10px;
+    padding-left: 15px;
+    font: normal 30px Roboto, arial, sans-serif;
+    width: 30%;
+}
+

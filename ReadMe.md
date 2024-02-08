@@ -30,7 +30,7 @@ Technologies:
 
 в терминале переходим в *\vue-project>
 пишем
-npm install
+npm install 
 npm run dev
 
 переходим на предложенную ссылку

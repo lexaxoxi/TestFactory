@@ -1,6 +1,5 @@
 package com.Prom.TestFactory.repo;
 
-import com.Prom.TestFactory.model.Department;
 import com.Prom.TestFactory.model.Profession;
 import org.springframework.data.jpa.repository.JpaRepository;
 

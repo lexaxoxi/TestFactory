@@ -1,7 +1,6 @@
 package com.Prom.TestFactory.controller;
 
 import com.Prom.TestFactory.model.Department;
-import com.Prom.TestFactory.model.Employee;
 import com.Prom.TestFactory.service.DepartmentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +19,7 @@ public class DepartmentController {
         return departmentService.findAllDepartment();
     }
 
-    @PostMapping("save_department")
+    @PostMapping
     public Department saveDepartment(@RequestBody Department department) {
         return departmentService.saveDepartment(department);
     }
@@ -30,7 +29,7 @@ public class DepartmentController {
         return departmentService.findById(id);
     }
 
-    @PutMapping("update_department/{id}")
+    @PutMapping("/{id}")
     public Department updateDepartment(@RequestBody Department updDepartment, @PathVariable Long id) {
         return departmentService.findById(id).map(currentDepartment -> {
             currentDepartment.setTitle(updDepartment.getTitle());
@@ -44,7 +43,7 @@ public class DepartmentController {
         });
 
     }
-    @DeleteMapping("remove_department/{id}")
+    @DeleteMapping("/{id}")
     public void removeDepartment(@PathVariable Long id) {
         departmentService.removeDepartment(id);
     }

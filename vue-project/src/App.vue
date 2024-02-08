@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
-import employee from './employee.vue'
-import department from './department.vue'
-import profession from './profession.vue'
+import employee from './views/employee.vue'
+import department from './views/department.vue'
+import profession from './views/profession.vue'
 
 const chapter = ref("none")
 
@@ -15,7 +15,7 @@ const change = (name) => {
   <div class="general-form">
     <div class="menu">
       <button class="menu-button" v-on:click="change('employee')">Сотрудник</button>
-      <button class="menu-button" v-on:click="change('department')">Департамент</button>
+      <button class="menu-button" v-on:click="change('department')">Отдел</button>
       <button class="menu-button" v-on:click="change('profession')">Профессия</button>
     </div>
     <div class="function">

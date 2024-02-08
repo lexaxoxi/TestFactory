@@ -1,11 +1,8 @@
 package com.Prom.TestFactory.Impl;
 
-import com.Prom.TestFactory.model.Department;
 import com.Prom.TestFactory.model.Profession;
-import com.Prom.TestFactory.repo.DepartmentRepository;
 import com.Prom.TestFactory.repo.ProfessionRepository;
-import com.Prom.TestFactory.service.DepartmentService;
-import com.Prom.TestFactory.service.ProfissionService;
+import com.Prom.TestFactory.service.ProfessionService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Primary;
@@ -17,7 +14,7 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 @Primary
-public class ProfessionServiceImpl implements ProfissionService {
+public class ProfessionServiceImpl implements ProfessionService {
     private final ProfessionRepository professionRepository;
 
 

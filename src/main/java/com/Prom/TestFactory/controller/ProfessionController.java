@@ -1,9 +1,7 @@
 package com.Prom.TestFactory.controller;
 
-import com.Prom.TestFactory.model.Department;
 import com.Prom.TestFactory.model.Profession;
-import com.Prom.TestFactory.service.DepartmentService;
-import com.Prom.TestFactory.service.ProfissionService;
+import com.Prom.TestFactory.service.ProfessionService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,38 +12,38 @@ import java.util.Optional;
 @RequestMapping("/api/profession")
 @AllArgsConstructor
 public class ProfessionController {
-    private ProfissionService profissionService;
+    private ProfessionService professionService;
 
     @GetMapping
     public List<Profession> findAllProfession() {
-        return profissionService.findAllProfession();
+        return professionService.findAllProfession();
     }
 
-    @PostMapping("save_profession")
+    @PostMapping
     public Profession saveProfession(@RequestBody Profession profession) {
-        return profissionService.saveProfession(profession);
+        return professionService.saveProfession(profession);
     }
 
     @GetMapping("/{id}")
     public Optional<Profession> findById(@PathVariable Long id) {
-        return profissionService.findById(id);
+        return professionService.findById(id);
     }
 
-    @PutMapping("update_profession/{id}")
+    @PutMapping("/{id}")
     public Profession updateProfession(@RequestBody Profession updProfession, @PathVariable Long id) {
-        return profissionService.findById(id).map(currentProfession -> {
+        return professionService.findById(id).map(currentProfession -> {
             currentProfession.setTitle(updProfession.getTitle());
             currentProfession.setNote(updProfession.getNote());
 
-            return profissionService.saveProfession(currentProfession);
+            return professionService.saveProfession(currentProfession);
         }).orElseGet(() -> {
             updProfession.setId(id);
-            return profissionService.saveProfession(updProfession);
+            return professionService.saveProfession(updProfession);
         });
 
     }
-    @DeleteMapping("remove_profession/{id}")
+    @DeleteMapping("/{id}")
     public void removeProfession(@PathVariable Long id) {
-        profissionService.removeProfession(id);
+        professionService.removeProfession(id);
     }
 }

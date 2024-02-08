@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
-const url = 'http://localhost:8080/api/employees'
+const url = 'http://localhost:8080/api/profession'
 
 const professions = ref([]);
 
@@ -37,7 +37,7 @@ const deleteProfession = (Id) => {
 };
 
 const editProfession = (Id) => {
-    axios.edit(url + '/' + Id)
+    axios.put(url + '/' + Id)
         .then(response => {
             console.log('Успешное отредактирование:', response.data);
             fetchProfession();
@@ -57,13 +57,14 @@ const createProfession = () => {
         title: review.value.title,
         note: review.value.note
     };
+  console.log(postData);
     postProfession(url, postData);
 };
 
 const postProfession = async (url, data) => {
     try {
         const response = await axios.post(url, data);
-        console.log('Успешный ответ:', response.data);
+        console.log('Успешный ответ:', review.value.title, review.value.note, response.data);
         fetchProfession();
 
         return response.data;
@@ -84,18 +85,18 @@ onMounted(() => {
     <div class="general">
         <h4>Профессия</h4>
         <div>
-            <input placeholder="Наименование">
-            <input placeholder="Примечание">
+            <input v-model="review.title "placeholder="Наименование">
+            <input v-model="review.note "placeholder="Примечание">
         <button @click="createProfession()">Создать</button>
         </div>
         <table>
             <tr>
-                <td>Наименование</td>
-                <td>Примечание</td>
+                <th>Наименование</th>
+                <th>Примечание</th>
             </tr>
             <tr v-for="profession in  professions " :key="profession.id">
-                <td>{{ professions.profession }}</td>
-                <td>{{ professions.note }}</td>
+                <td>{{ profession.title }}</td>
+                <td>{{ profession.note }}</td>
                 <td>
                     <button @click="editProfession(profession.id)">Отредактировать</button>
                     <button @click="deleteProfession(profession.id)">Удалить</button>

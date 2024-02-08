@@ -21,7 +21,7 @@ public class EmployeeController {
         return employeeService.findAllEmployee();
     }
 
-    @PostMapping("save_employee")
+    @PostMapping
     public Employee saveEmployee(@RequestBody Employee employee) {
         return employeeService.saveEmployee(employee);
     }
@@ -34,7 +34,7 @@ public class EmployeeController {
 
     }
 
-    @PutMapping("update_employee/{id}")
+    @PutMapping("/{id}")
     public Employee updateEmployee(@RequestBody Employee updEmployee, @PathVariable Long id) {
         return employeeService.findById(id)
                 .map(currentEmployee -> {
@@ -53,7 +53,7 @@ public class EmployeeController {
 
     }
 
-    @DeleteMapping("remove_employee/{id}")
+    @DeleteMapping("/{id}")
     public void removeEmployee(@PathVariable Long id) {
         employeeService.removeEmployee(id);
     }

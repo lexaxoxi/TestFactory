@@ -11,8 +11,9 @@ Technologies:
 * тестировалось c помощью Postman
 
 
-Запуск
 
+
+# **Запуск проекта**
 ## Запускаем бэк:
 
 1. запускаем main-class TestFactoryApplication.java
@@ -30,8 +31,11 @@ Technologies:
 
 в терминале переходим в *\vue-project>
 пишем
-npm install 
+
+npm install
+
 npm run dev
+
 
 переходим на предложенную ссылку
 
